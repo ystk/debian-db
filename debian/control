@@ -1,0 +1,37 @@
+Source: db
+Section: oldlibs
+Priority: extra
+Maintainer: Debian Berkeley DB Group <pkg-db-devel@lists.alioth.debian.org>
+Uploaders: Ondřej Surý <ondrej@debian.org>, Dmitrijs Ledkovs <xnox@debian.org>
+Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 9),
+	       autotools-dev (>= 20100122.1),
+	       tcl-dev,
+	       procps [!hurd-i386]
+Homepage: http://www.oracle.com/technology/software/products/berkeley-db/index.html
+Vcs-Browser: http://anonscm.debian.org/?p=pkg-db/db.git
+Vcs-Git: git://anonscm.debian.org/pkg-db/db.git
+
+Package: db5.1-util
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends},
+	 ${misc:Depends}
+Breaks: libdb5.1 (<< 5.1.29-8~)
+Replaces: libdb5.1 (<< 5.1.29-8~)
+Description: Berkeley v5.1 Database Utilities
+ This package provides different tools for manipulating databases
+ in the Berkeley v5.1 database format, and includes:
+  - db5.1_archive: write the pathnames of the log files no longer in use.
+  - db5.1_checkpoint: daemon process to monitor the database log and
+    checkpoint it periodically.
+  - db5.1_deadlock: traverse the database environment lock region and
+    abort lock requests when a deadlock is detected.
+  - db5.1_load: loads (and creates) a database from standard input.
+  - db5.1_dump: read a database file and write it in a format understood
+    by db4.{2..8}_load.
+  - db5.1_printlog: dump log files in human readable format.
+  - db5.1_stat: display statistics for Berkeley DB environments.
+  - db5.1_upgrade: upgrades the version of files and the databases they
+    contain.
+  - db5.1_verify: check the structure of files and their databases.
