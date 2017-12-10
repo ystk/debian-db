@@ -6,3 +6,4 @@
 006-mutex_alignment.patch
 007-link-sql-libs.patch
 libtool-update.diff
+CVE-2017-10140-cwd-db_config.patch
